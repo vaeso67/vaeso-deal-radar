@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-11-14T10:10:49.090978+00:00",
+  "demo": true,
+  "products": [
+    {
+      "code": "MON001",
+      "name": "LG Monitor 27 pollici",
+      "currency": "EUR",
+      "best_merchant": "TechStore",
+      "best_price": 179.9,
+      "offers": [
+        {
+          "merchant": "TechStore",
+          "price": 179.9,
+          "url": ""
+        },
+        {
+          "merchant": "DigitalShop",
+          "price": 189.9,
+          "url": ""
+        }
+      ]
+    },
+    {
+      "code": "RAM001",
+      "name": "Kingston Fury 16GB",
+      "currency": "EUR",
+      "best_merchant": "DigitalShop",
+      "best_price": 42.5,
+      "offers": [
+        {
+          "merchant": "DigitalShop",
+          "price": 42.5,
+          "url": ""
+        },
+        {
+          "merchant": "TechStore",
+          "price": 45.9,
+          "url": ""
+        }
+      ]
+    },
+    {
+      "code": "SSD001",
+      "name": "Samsung 990 EVO 1TB",
+      "currency": "EUR",
+      "best_merchant": "DigitalShop",
+      "best_price": 79.9,
+      "offers": [
+        {
+          "merchant": "DigitalShop",
+          "price": 79.9,
+          "url": ""
+        },
+        {
+          "merchant": "TechStore",
+          "price": 89.9,
+          "url": ""
+        }
+      ]
+    }
+  ]
+}

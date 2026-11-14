@@ -1,0 +1,20 @@
+# Database locali
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# Credenziali e configurazioni private
+.env
+.env.*
+
+# File temporanei Python
+__pycache__/
+*.pyc
+
+# Ambienti virtuali
+.venv/
+# Feed Awin e cataloghi locali
+data/datafeeds.csv
+data/*feed*.csv
+data/*feed*.xml
