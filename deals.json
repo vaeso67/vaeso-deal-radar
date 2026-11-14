@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T10:10:49.090978+00:00",
+  "generated_at": "2026-11-14T11:45:06.367820+00:00",
   "demo": true,
   "products": [
     {
@@ -56,6 +56,22 @@
           "merchant": "TechStore",
           "price": 89.9,
           "url": ""
+        }
+      ]
+    },
+    {
+      "code": "AKKO001",
+      "name": "AKKO MOD 007 V3 HE Year of Dragon",
+      "currency": "EUR",
+      "best_merchant": "AKKO IT",
+      "best_price": 154.69,
+      "affiliate": true,
+      "demo": false,
+      "offers": [
+        {
+          "merchant": "AKKO IT",
+          "price": 154.69,
+          "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Fmod-007-v3-he-year-of-dragon-hall-effect-keyboard"
         }
       ]
     }

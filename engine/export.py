@@ -52,6 +52,36 @@ def export_deals():
             "offers": offers
         })
 
+
+    # VAESO_AFFILIATE_IMPORT_V1
+    import csv
+
+    affiliate_path = BASE_DIR / "data" / "affiliate_products.csv"
+
+    if affiliate_path.exists():
+        with affiliate_path.open(
+            newline="", encoding="utf-8-sig"
+        ) as f:
+            reader = csv.DictReader(f)
+
+            for item in reader:
+                price = float(item["price"])
+
+                deals.append({
+                    "code": item["product_code"],
+                    "name": item["product_name"],
+                    "currency": item["currency"],
+                    "best_merchant": item["merchant"],
+                    "best_price": price,
+                    "affiliate": True,
+                    "demo": False,
+                    "offers": [{
+                        "merchant": item["merchant"],
+                        "price": price,
+                        "url": item["product_url"]
+                    }]
+                })
+
     output = {
         "generated_at": datetime.now(
             timezone.utc

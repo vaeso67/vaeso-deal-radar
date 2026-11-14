@@ -124,72 +124,7 @@
   </style>
 </head>
 
-<section id="catalogo-vaeso" style="max-width:1100px;margin:50px auto;padding:24px;color:#e8f3f5">
-  <h2>📡 VAESO Deal Radar — Catalogo</h2>
-  <p id="catalogo-stato">Caricamento prodotti...</p>
-  <div id="catalogo-prodotti" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px"></div>
-</section>
 
-<script>
-async function caricaCatalogo() {
-  const stato = document.getElementById("catalogo-stato");
-  const contenitore = document.getElementById("catalogo-prodotti");
-
-  try {
-    const risposta = await fetch("./deals.json", {
-      cache: "no-store"
-    });
-
-    if (!risposta.ok) {
-      throw new Error("Catalogo non disponibile");
-    }
-
-    const dati = await risposta.json();
-
-    stato.textContent = dati.demo
-      ? "Catalogo dimostrativo — prezzi non reali"
-      : "Offerte disponibili";
-
-    contenitore.replaceChildren();
-
-    for (const prodotto of dati.products) {
-      const scheda = document.createElement("article");
-
-      scheda.style.cssText =
-        "background:#142438;border:1px solid #29465a;" +
-        "border-radius:14px;padding:22px";
-
-      const nome = document.createElement("h3");
-      nome.textContent = prodotto.name;
-
-      const negozio = document.createElement("p");
-      negozio.textContent =
-        "Negozio: " + prodotto.best_merchant;
-
-      const prezzo = document.createElement("strong");
-      prezzo.style.cssText =
-        "color:#20d6aa;font-size:1.6rem";
-
-      prezzo.textContent = new Intl.NumberFormat(
-        "it-IT", {
-          style: "currency",
-          currency: prodotto.currency
-        }
-      ).format(prodotto.best_price);
-
-      scheda.append(nome, negozio, prezzo);
-      contenitore.appendChild(scheda);
-    }
-
-  } catch (errore) {
-    stato.textContent =
-      "Catalogo temporaneamente non disponibile.";
-    console.error(errore);
-  }
-}
-
-caricaCatalogo();
-</script>
 <body>
   <header>
     <div class="logo">VAESO <span>DEAL RADAR</span></div>
@@ -254,9 +189,10 @@ caricaCatalogo();
       </p>
       <p>
         Il sistema è in fase di sviluppo.
-        Le funzionalità di comparazione prezzi
-        e i collegamenti commerciali non sono
-        ancora disponibili.
+        Il catalogo è in fase di sviluppo.
+        Sono disponibili i primi collegamenti affiliati,
+        mentre il confronto automatico dei prezzi
+        è ancora in preparazione.
       </p>
       <p>
         In futuro alcuni collegamenti potranno
@@ -264,7 +200,127 @@ caricaCatalogo();
         senza costi aggiuntivi per chi acquista.
       </p>
     </section>
-  </main>
+  <section id="catalogo-vaeso" style="max-width:1100px;margin:50px auto;padding:24px;color:#e8f3f5">
+  <h2>VAESO Deal Radar — Catalogo</h2>
+  <p id="catalogo-stato">Caricamento prodotti...</p>
+  <div id="catalogo-prodotti" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,320px));gap:20px"></div>
+</section>
+
+<script>
+async function caricaCatalogo() {
+  const stato = document.getElementById("catalogo-stato");
+  const contenitore = document.getElementById("catalogo-prodotti");
+
+  try {
+    const risposta = await fetch("./deals.json", {
+      cache: "no-store"
+    });
+
+    if (!risposta.ok) {
+      throw new Error("Catalogo non disponibile");
+    }
+
+    const dati = await risposta.json();
+    const prodotti = dati.products || [];
+
+    const affiliati = prodotti.filter(p => p.affiliate === true);
+    const demo = prodotti.filter(p => p.affiliate !== true);
+
+    stato.textContent =
+      affiliati.length + " offerte affiliate disponibili";
+
+    contenitore.replaceChildren();
+
+    for (const prodotto of affiliati) {
+      const reale = prodotto.affiliate === true;
+      const scheda = document.createElement("article");
+
+      scheda.style.cssText =
+        "background:#142438;border:1px solid #29465a;" +
+        "border-radius:14px;padding:22px;display:flex;" +
+        "flex-direction:column;gap:12px";
+
+      const tipo = document.createElement("span");
+      tipo.textContent = reale
+        ? "OFFERTA AFFILIATA"
+        : "PRODOTTO DIMOSTRATIVO";
+      tipo.style.cssText =
+        "color:#20d6aa;font-size:.75rem;font-weight:bold;" +
+        "letter-spacing:1px";
+
+      const nome = document.createElement("h3");
+      nome.textContent = prodotto.name;
+      nome.style.margin = "0";
+
+      const negozio = document.createElement("p");
+      negozio.textContent = "Negozio: " + prodotto.best_merchant;
+      negozio.style.margin = "0";
+
+      const prezzo = document.createElement("strong");
+      prezzo.style.cssText =
+        "color:#20d6aa;font-size:1.6rem";
+
+      prezzo.textContent = new Intl.NumberFormat("it-IT", {
+        style: "currency",
+        currency: prodotto.currency
+      }).format(prodotto.best_price);
+
+      scheda.append(tipo, nome, negozio, prezzo);
+
+      if (reale) {
+        const nota = document.createElement("small");
+        nota.textContent =
+          "Prezzo rilevato manualmente il 14/11/2026. " +
+          "Verifica il prezzo aggiornato sul negozio.";
+        nota.style.color = "#b5c6d5";
+        scheda.appendChild(nota);
+
+        const url = prodotto.offers?.[0]?.url;
+
+        if (url && /^https:\/\//i.test(url)) {
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          link.rel = "sponsored noopener noreferrer";
+          link.textContent = "Vai all'offerta";
+          link.style.cssText =
+            "display:inline-block;background:#20d6aa;" +
+            "color:#071522;padding:12px 18px;" +
+            "border-radius:8px;text-decoration:none;" +
+            "font-weight:bold;text-align:center";
+          scheda.appendChild(link);
+        }
+      } else {
+        const nota = document.createElement("small");
+        nota.textContent =
+          "Prezzo di esempio — non è un'offerta reale.";
+        nota.style.color = "#b5c6d5";
+        scheda.appendChild(nota);
+      }
+
+      contenitore.appendChild(scheda);
+    }
+
+    const informativa = document.createElement("p");
+    informativa.textContent =
+      "Trasparenza: alcuni collegamenti sono affiliati. " +
+      "VAESO Deal Radar può ricevere una commissione " +
+      "sugli acquisti idonei, senza costi aggiuntivi per te.";
+    informativa.style.cssText =
+      "color:#b5c6d5;font-size:.85rem;margin-top:22px";
+
+    contenitore.after(informativa);
+
+  } catch (errore) {
+    stato.textContent =
+      "Catalogo temporaneamente non disponibile.";
+    console.error(errore);
+  }
+}
+
+caricaCatalogo();
+</script>
+</main>
 
   <footer>
     © 2026 VAESO Deal Radar | Progetto indipendente
