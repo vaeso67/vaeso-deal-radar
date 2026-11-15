@@ -81,12 +81,16 @@ def export_deals():
                         "url": item["product_url"]
                     }]
                 })
-
+    # Escludi i prodotti dimostrativi dal catalogo
+    deals = [
+        p for p in deals
+        if p.get("affiliate") is True
+    ]
     output = {
         "generated_at": datetime.now(
             timezone.utc
         ).isoformat(),
-        "demo": True,
+        "demo": False,
         "products": deals
     }
 

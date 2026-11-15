@@ -1,64 +1,7 @@
 {
-  "generated_at": "2026-11-14T11:45:06.367820+00:00",
-  "demo": true,
+  "generated_at": "2026-11-15T19:31:13.540510+00:00",
+  "demo": false,
   "products": [
-    {
-      "code": "MON001",
-      "name": "LG Monitor 27 pollici",
-      "currency": "EUR",
-      "best_merchant": "TechStore",
-      "best_price": 179.9,
-      "offers": [
-        {
-          "merchant": "TechStore",
-          "price": 179.9,
-          "url": ""
-        },
-        {
-          "merchant": "DigitalShop",
-          "price": 189.9,
-          "url": ""
-        }
-      ]
-    },
-    {
-      "code": "RAM001",
-      "name": "Kingston Fury 16GB",
-      "currency": "EUR",
-      "best_merchant": "DigitalShop",
-      "best_price": 42.5,
-      "offers": [
-        {
-          "merchant": "DigitalShop",
-          "price": 42.5,
-          "url": ""
-        },
-        {
-          "merchant": "TechStore",
-          "price": 45.9,
-          "url": ""
-        }
-      ]
-    },
-    {
-      "code": "SSD001",
-      "name": "Samsung 990 EVO 1TB",
-      "currency": "EUR",
-      "best_merchant": "DigitalShop",
-      "best_price": 79.9,
-      "offers": [
-        {
-          "merchant": "DigitalShop",
-          "price": 79.9,
-          "url": ""
-        },
-        {
-          "merchant": "TechStore",
-          "price": 89.9,
-          "url": ""
-        }
-      ]
-    },
     {
       "code": "AKKO001",
       "name": "AKKO MOD 007 V3 HE Year of Dragon",
@@ -72,6 +15,22 @@
           "merchant": "AKKO IT",
           "price": 154.69,
           "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Fmod-007-v3-he-year-of-dragon-hall-effect-keyboard"
+        }
+      ]
+    },
+    {
+      "code": "AKKO002",
+      "name": "AKKO Dash Gaming Mouse",
+      "currency": "EUR",
+      "best_merchant": "AKKO IT",
+      "best_price": 29.14,
+      "affiliate": true,
+      "demo": false,
+      "offers": [
+        {
+          "merchant": "AKKO IT",
+          "price": 29.14,
+          "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Fdash-gaming-mouse"
         }
       ]
     }
