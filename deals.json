@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T19:31:13.540510+00:00",
+  "generated_at": "2026-11-15T19:36:51.058503+00:00",
   "demo": false,
   "products": [
     {
@@ -23,13 +23,13 @@
       "name": "AKKO Dash Gaming Mouse",
       "currency": "EUR",
       "best_merchant": "AKKO IT",
-      "best_price": 29.14,
+      "best_price": 66.63,
       "affiliate": true,
       "demo": false,
       "offers": [
         {
           "merchant": "AKKO IT",
-          "price": 29.14,
+          "price": 66.63,
           "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Fdash-gaming-mouse"
         }
       ]
