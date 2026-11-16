@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T19:36:51.058503+00:00",
+  "generated_at": "2026-11-16T11:31:09.856966+00:00",
   "demo": false,
   "products": [
     {
@@ -31,6 +31,22 @@
           "merchant": "AKKO IT",
           "price": 66.63,
           "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Fdash-gaming-mouse"
+        }
+      ]
+    },
+    {
+      "code": "AKKO003",
+      "name": "MonsGeek FUN68 HE Magnetic Keyboard",
+      "currency": "EUR",
+      "best_merchant": "AKKO IT",
+      "best_price": 38.31,
+      "affiliate": true,
+      "demo": false,
+      "offers": [
+        {
+          "merchant": "AKKO IT",
+          "price": 38.31,
+          "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Ffun68-he-magnetic-keyboard"
         }
       ]
     }
