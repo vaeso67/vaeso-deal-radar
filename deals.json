@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:31:09.856966+00:00",
+  "generated_at": "2026-11-16T15:16:30.078886+00:00",
   "demo": false,
   "products": [
     {
@@ -47,6 +47,38 @@
           "merchant": "AKKO IT",
           "price": 38.31,
           "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Ffun68-he-magnetic-keyboard"
+        }
+      ]
+    },
+    {
+      "code": "AKKO004",
+      "name": "Verge S9 Ultra Gaming Headset Black Red",
+      "currency": "EUR",
+      "best_merchant": "AKKO IT",
+      "best_price": 49.97,
+      "affiliate": true,
+      "demo": false,
+      "offers": [
+        {
+          "merchant": "AKKO IT",
+          "price": 49.97,
+          "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fit%2Fproducts%2Fverge-s9-ultra-gaming-headset-black-red%3Fvariant%3D46708692877511"
+        }
+      ]
+    },
+    {
+      "code": "AKKO005",
+      "name": "AKKO RSG Mouse Pad 900x400mm",
+      "currency": "EUR",
+      "best_merchant": "AKKO IT",
+      "best_price": 41.64,
+      "affiliate": true,
+      "demo": false,
+      "offers": [
+        {
+          "merchant": "AKKO IT",
+          "price": 41.64,
+          "url": "https://www.awin1.com/cread.php?awinmid=69032&awinaffid=3154946&ued=https%3A%2F%2Fakkogear.eu%2Fproducts%2Frsg-mouse-pad"
         }
       ]
     }
