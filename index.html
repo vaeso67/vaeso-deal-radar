@@ -268,7 +268,24 @@ async function caricaCatalogo() {
         currency: prodotto.currency
       }).format(prodotto.best_price);
 
-      scheda.append(tipo, nome, negozio, prezzo);
+      if (prodotto.image_url) {
+    const immagine = document.createElement("img");
+    immagine.src = prodotto.image_url;
+    immagine.alt = prodotto.name;
+    immagine.loading = "lazy";
+    immagine.style.cssText =
+        "width:100%;height:190px;object-fit:contain;" +
+        "background:#ffffff;border-radius:10px;padding:10px;" +
+        "box-sizing:border-box";
+
+    immagine.onerror = () => immagine.remove();
+
+    scheda.appendChild(tipo);
+    scheda.appendChild(immagine);
+    scheda.append(nome, negozio, prezzo);
+} else {
+    scheda.append(tipo, nome, negozio, prezzo);
+}
 
       if (reale) {
         const nota = document.createElement("small");
@@ -290,7 +307,8 @@ async function caricaCatalogo() {
             "display:inline-block;background:#20d6aa;" +
             "color:#071522;padding:12px 18px;" +
             "border-radius:8px;text-decoration:none;" +
-            "font-weight:bold;text-align:center";
+            "font-weight:bold;text-align:center;" +
+            "margin-top:auto";
           scheda.appendChild(link);
         }
       } else {

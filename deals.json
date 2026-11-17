@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-11-16T15:16:30.078886+00:00",
+  "generated_at": "2026-11-17T17:52:22.376947+00:00",
   "demo": false,
   "products": [
     {
       "code": "AKKO001",
+      "image_url": "images/001.png",
       "name": "AKKO MOD 007 V3 HE Year of Dragon",
       "currency": "EUR",
       "best_merchant": "AKKO IT",
@@ -20,6 +21,7 @@
     },
     {
       "code": "AKKO002",
+      "image_url": "images/002.png",
       "name": "AKKO Dash Gaming Mouse",
       "currency": "EUR",
       "best_merchant": "AKKO IT",
@@ -36,6 +38,7 @@
     },
     {
       "code": "AKKO003",
+      "image_url": "images/003.png",
       "name": "MonsGeek FUN68 HE Magnetic Keyboard",
       "currency": "EUR",
       "best_merchant": "AKKO IT",
@@ -52,6 +55,7 @@
     },
     {
       "code": "AKKO004",
+      "image_url": "images/004.png",
       "name": "Verge S9 Ultra Gaming Headset Black Red",
       "currency": "EUR",
       "best_merchant": "AKKO IT",
@@ -68,6 +72,7 @@
     },
     {
       "code": "AKKO005",
+      "image_url": "images/005.png",
       "name": "AKKO RSG Mouse Pad 900x400mm",
       "currency": "EUR",
       "best_merchant": "AKKO IT",
